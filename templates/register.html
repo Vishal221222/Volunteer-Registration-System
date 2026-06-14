@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Volunteer Registration Form</h1>
+
+<form method="POST" class="form-box">
+    <label>Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Phone</label>
+    <input type="text" name="phone" required>
+
+    <label>Age</label>
+    <input type="number" name="age" required>
+
+    <label>Gender</label>
+    <select name="gender">
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <label>Address</label>
+    <textarea name="address"></textarea>
+
+    <label>Skills</label>
+    <input type="text" name="skills" placeholder="Teaching, Event Management, First Aid">
+
+    <label>Availability</label>
+    <select name="availability">
+        <option value="">Select</option>
+        <option>Weekdays</option>
+        <option>Weekends</option>
+        <option>Both</option>
+    </select>
+
+    <label>Interest Area</label>
+    <select name="interest_area">
+        <option value="">Select</option>
+        <option>Education</option>
+        <option>Health</option>
+        <option>Environment</option>
+        <option>Event Management</option>
+        <option>Social Work</option>
+    </select>
+
+    <button type="submit">Submit Registration</button>
+</form>
+{% endblock %}

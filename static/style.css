@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f7;
+    color: #222;
+}
+
+nav {
+    background: #1d3557;
+    color: white;
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.hero {
+    background: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.btn, button {
+    background: #1d3557;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-light {
+    background: #ddd;
+    color: #222;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.form-box {
+    background: white;
+    width: 550px;
+    max-width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.small-form {
+    width: 380px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 80px;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 4px;
+    background: #ddd;
+}
+
+.success {
+    background: #d8f3dc;
+    color: #1b4332;
+}
+
+.error {
+    background: #ffd6d6;
+    color: #8b0000;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 220px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.actions {
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    text-align: left;
+}
+
+th {
+    background: #1d3557;
+    color: white;
+}
+
+.filter-box {
+    background: white;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.filter-box input,
+.filter-box select {
+    margin-top: 0;
+}
+
+.danger {
+    background: #c1121f;
+    margin-top: 8px;
+}

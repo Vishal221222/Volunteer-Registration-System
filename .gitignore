@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# Database / local files
+*.db
+*.sqlite3
+*.sql.backup
+
+# TiDB / SSL certificates
+*.pem
+*.crt
+*.key
+*.cert
+
+# Uploads
+static/uploads/
+uploads/
+
+# Reports
+*.csv
+reports/
+
+# Logs
+*.log
+logs/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build files
+build/
+dist/
+*.egg-info/

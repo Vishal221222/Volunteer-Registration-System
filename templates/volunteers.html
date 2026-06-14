@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Manage Volunteers</h1>
+
+<form method="GET" class="filter-box">
+    <input type="text" name="search" placeholder="Search name, email or phone" value="{{ search or '' }}">
+
+    <select name="status">
+        <option value="">All Status</option>
+        <option value="Pending" {% if status == 'Pending' %}selected{% endif %}>Pending</option>
+        <option value="Approved" {% if status == 'Approved' %}selected{% endif %}>Approved</option>
+        <option value="Rejected" {% if status == 'Rejected' %}selected{% endif %}>Rejected</option>
+    </select>
+
+    <button type="submit">Filter</button>
+    <a class="btn-light" href="{{ url_for('volunteers') }}">Clear</a>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Age</th>
+        <th>Skills</th>
+        <th>Availability</th>
+        <th>Interest</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for volunteer in volunteers %}
+    <tr>
+        <td>{{ volunteer.id }}</td>
+        <td>
+            <b>{{ volunteer.name }}</b><br>
+            {{ volunteer.gender }}<br>
+            {{ volunteer.address }}
+        </td>
+        <td>
+            {{ volunteer.email }}<br>
+            {{ volunteer.phone }}
+        </td>
+        <td>{{ volunteer.age }}</td>
+        <td>{{ volunteer.skills }}</td>
+        <td>{{ volunteer.availability }}</td>
+        <td>{{ volunteer.interest_area }}</td>
+        <td>{{ volunteer.status }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('update_status', volunteer_id=volunteer.id) }}">
+                <select name="status">
+                    <option value="Pending" {% if volunteer.status == 'Pending' %}selected{% endif %}>Pending</option>
+                    <option value="Approved" {% if volunteer.status == 'Approved' %}selected{% endif %}>Approved</option>
+                    <option value="Rejected" {% if volunteer.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+
+            <form method="POST" action="{{ url_for('delete_volunteer', volunteer_id=volunteer.id) }}" onsubmit="return confirm('Delete this volunteer?')">
+                <button type="submit" class="danger">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

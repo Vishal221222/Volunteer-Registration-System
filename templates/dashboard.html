@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        <h3>Total Volunteers</h3>
+        <p>{{ total }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Pending</h3>
+        <p>{{ pending }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Approved</h3>
+        <p>{{ approved }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Rejected</h3>
+        <p>{{ rejected }}</p>
+    </div>
+</div>
+
+<div class="actions">
+    <a class="btn" href="{{ url_for('volunteers') }}">Manage Volunteers</a>
+    <a class="btn" href="{{ url_for('generate_report') }}">Download CSV Report</a>
+</div>
+
+<h2>Recent Registrations</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Interest Area</th>
+        <th>Status</th>
+        <th>Registered At</th>
+    </tr>
+
+    {% for volunteer in recent_volunteers %}
+    <tr>
+        <td>{{ volunteer.name }}</td>
+        <td>{{ volunteer.email }}</td>
+        <td>{{ volunteer.interest_area }}</td>
+        <td>{{ volunteer.status }}</td>
+        <td>{{ volunteer.registered_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
