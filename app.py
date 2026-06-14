@@ -18,7 +18,7 @@ DB_CONFIG = {
     "use_pure": True,
     "ssl_verify_cert": True,
     "ssl_verify_identity": True,
-    "ssl_ca": r"C:\Users\ASUS\Downloads\isrgrootx1.pem"
+    "ssl_ca": "/etc/secrets/isrgrootx1.pem"
 }
 
 def get_db_connection():
