@@ -16,9 +16,6 @@ DB_CONFIG = {
     "database": "volunteer_db",
     "autocommit": True,
     "use_pure": True,
-    "ssl_verify_cert": True,
-    "ssl_verify_identity": True,
-    "ssl_ca": "/etc/secrets/isrgrootx1.pem"
 }
 
 def get_db_connection():
